@@ -42,9 +42,17 @@ CMD ["nginx", "-g", "daemon off;"]
 ```
 docker build -t my-nginx:1.0 .
 ```
-Запускае контейнер командой:
+Меняем тэг:
 ```
-docker run -d -p 80:80 my-nginx:1.0
+docker tag my-nginx:1.0 bagerz2000/my-nginx:latest
+```
+Логинимся
+```
+docker login
+```
+Заливаем образ в docktr hub
+```
+docker push
 ```
 
 **Ответ 1**  
