@@ -47,8 +47,8 @@ docker build -t my-nginx:1.0 .
 docker run -d -p 80:80 my-nginx:1.0
 ```
 
-**Ответ 1**
-https://hub.docker.com/r/bagerz2000/my-nginx
+**Ответ 1**  
+https://hub.docker.com/r/bagerz2000/my-nginx  
 
 
 ## Задача 2
@@ -106,16 +106,15 @@ https://hub.docker.com/r/bagerz2000/my-nginx
 - Добавьте еще один файл в папку ```/data``` на хостовой машине;
 - Подключитесь во второй контейнер и отобразите листинг и содержание файлов в ```/data``` контейнера.
 
-**Шаги 3**
-docker run -d -v ./data:/data centos tail -f
-docker run -d -v ./data:/data debian tail -f
-docker exec -it bbb2838f0248 bash
-echo netology > /data/netelogy.txt
-exit
-echo netology-host > ./data/netelogy-host.txt
-docker exec -it 72dbe9bd71a5 bash
-
-**Ответ 3**
-[root@72dbe9bd71a5 /]# ls /data
-netelogy-host.txt  netelogy.txt
-
+**Шаги 3**  
+docker run -d -v ./data:/data centos tail -f  
+docker run -d -v ./data:/data debian tail -f  
+docker exec -it bbb2838f0248 bash  
+echo netology > /data/netelogy.txt  
+exit  
+echo netology-host > ./data/netelogy-host.txt  
+docker exec -it 72dbe9bd71a5 bash  
+  
+**Ответ 3**  
+[root@72dbe9bd71a5 /]# ls /data  
+netelogy-host.txt  netelogy.txt  
