@@ -72,5 +72,8 @@ root@srv1:/home/adm2/terraform# cat terraform.tfstate
 }
 ```
   
-8. Объясните, почему при этом не был удалён docker-образ nginx:latest. Ответ обязательно подкрепите строчкой из документации terraform провайдера docker. (ищите в классификаторе resource docker_image)  
+8. Объясните, почему при этом не был удалён docker-образ nginx:latest. Ответ обязательно подкрепите строчкой из документации terraform провайдера docker. (ищите в классификаторе resource docker_image) 
+   
 keep_locally - Если true, то изображение Docker не будет удалено при операции уничтожения. Если это значение равно false, изображение будет удалено из локального хранилища docker при операции уничтожения.
+  
+keep_locally (Boolean) If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker local storage on destroy operation.  
