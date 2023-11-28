@@ -35,16 +35,3 @@ resource "docker_container" "nginx" {
     external = 8000
   }
 }
-
-
-/*
-variable "cloud_id" {
-  description = "Yandex Cloud id."
-  type        = string
-}
-
-variable "folder_id" {
-  description = "Yandex Cloud folder id."
-  type        = string
-}
-*/
