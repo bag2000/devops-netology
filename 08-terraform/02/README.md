@@ -49,7 +49,11 @@ provider "yandex" {
 - ответы на вопросы.
 
 **Ответ на задание 1**
+скриншот ЛК Yandex Cloud с созданной ВМ, где видно внешний ip-адрес  
 ![scren1](https://github.com/bag2000/devops-netology/blob/main/08-terraform/02/screnshots/1-1.png)
+  
+скриншот консоли, curl должен отобразить тот же внешний ip-адрес  
+![scren1](https://github.com/bag2000/devops-netology/blob/main/08-terraform/02/screnshots/1-2.png)
 
 ### Задание 2
 
