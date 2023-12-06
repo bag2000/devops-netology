@@ -49,6 +49,7 @@ provider "yandex" {
 - ответы на вопросы.
 
 **Ответ на задание 1**
+![scren1](https://github.com/bag2000/devops-netology/blob/main/08-terraform/02/screnshots/1-1.png)
 
 ### Задание 2
 
