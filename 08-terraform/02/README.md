@@ -142,7 +142,27 @@ web_public_ip = "51.250.13.26"
 
 В качестве решения предоставьте необходимые команды и их вывод.
 
-**Ответ на задание 7**
+**Ответ на задание 7**  
+Напишите, какой командой можно отобразить **второй** элемент списка test_list.  
+```
+terraform console
+local.test_list[1]
+"Alex"
+```
+Найдите длину списка test_list с помощью функции length(<имя переменной>).  
+```
+length(local.test_list)
+3
+```
+Напишите, какой командой можно отобразить значение ключа admin из map test_map.  
+```
+local.test_map["admin"]
+"John"
+```
+Напишите interpolation-выражение, результатом которого будет: "John is admin for production server based on OS ubuntu-20-04 with X vcpu, Y ram and Z virtual disks", используйте данные из переменных test_list, test_map, servers и функцию length() для подстановки значений.  
+```
+"${local.test_map["admin"]} is admin for production server based on OS ${local.servers["stage"]["image"]} with ${local.servers["stage"]["cpu"]} vcpu, ${local.servers["stage"]["ram"]} ram and ${length(local.servers["stage"]["disks"])} virtual disks"
+```
 
 ------
 ### Правила приёма работы
