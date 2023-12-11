@@ -39,7 +39,7 @@
 Приложите скриншот входящих правил «Группы безопасности» в ЛК Yandex Cloud или скриншот отказа в предоставлении доступа к preview-версии.
 
 **Ответ на задание 1:**
-![scren1](https://terraform-eap.website.yandexcloud.net/docs/providers/yandex/d/datasource_compute_disk.html).
+![scren1](https://github.com/bag2000/devops-netology/blob/main/08-terraform/03/screenshots/1-1.png).
 
 ------
 
@@ -92,7 +92,7 @@ storage ansible_host=<внешний ip-адрес> fqdn=<имя виртуал�
 **Удалите все созданные ресурсы**.
 
 **Ответ на задание 4:**
-![scren2](https://terraform-eap.website.yandexcloud.net/docs/providers/yandex/d/datasource_compute_disk.html).
+![scren2](https://github.com/bag2000/devops-netology/blob/main/08-terraform/03/screenshots/4-1.png).
 
 ------
 
