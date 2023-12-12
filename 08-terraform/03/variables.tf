@@ -66,6 +66,12 @@ variable "each_vm" {
    ]
 }
 
+variable "web_count" {
+  type        = number
+  default     = 2
+  description = "count web server"
+}
+
 variable "storage_name" {
   type        = string
   default     = "storage"
