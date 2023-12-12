@@ -77,3 +77,15 @@ variable "disk_type" {
   default     = "network-hdd"
   description = "disk type"
 }
+
+variable "disk_count" {
+  type        = number
+  default     = 3
+  description = "disk count"
+}
+
+variable "disk_size" {
+  type        = number
+  default     = 1
+  description = "disk size GB"
+}
