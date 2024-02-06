@@ -37,11 +37,11 @@
 2. Если всё отработалось в рамках ожидания — выгрузите схемы workflow для импорта в XML. Файлы с workflow и скриншоты workflow приложите к решению задания.
 
 
-**Ответ**
-[Workflow 1](https://github.com/bag2000/devops-netology/blob/main/09-ci/01/workflow-xml/1.xml)
-![scren1](https://github.com/bag2000/devops-netology/blob/main/09-ci/01/images/1.png)
-[Workflow 2](https://github.com/bag2000/devops-netology/blob/main/09-ci/01/workflow-xml/2.xml)
-![scren2](https://github.com/bag2000/devops-netology/blob/main/09-ci/01/images/2.png)
+**Ответ**  
+[Workflow 1](https://github.com/bag2000/devops-netology/blob/main/09-ci/01/workflow-xml/1.xml)  
+![scren1](https://github.com/bag2000/devops-netology/blob/main/09-ci/01/images/1.png)  
+[Workflow 2](https://github.com/bag2000/devops-netology/blob/main/09-ci/01/workflow-xml/2.xml)  
+![scren2](https://github.com/bag2000/devops-netology/blob/main/09-ci/01/images/2.png)  
 ---
 
 ### Как оформить решение задания
