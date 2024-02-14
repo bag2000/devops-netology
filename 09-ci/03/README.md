@@ -25,6 +25,10 @@
 8. Запустите анализатор повторно — проверьте, что QG пройдены успешно.
 9. Сделайте скриншот успешного прохождения анализа, приложите к решению ДЗ.
 
+**Ответ**  
+![img1](https://github.com/bag2000/devops-netology/blob/main/09-ci/03/solution/1.png)  
+![img2](https://github.com/bag2000/devops-netology/blob/main/09-ci/03/solution/2.png)  
+
 ## Знакомство с Nexus
 
 ### Основная часть
@@ -40,6 +44,9 @@
 2. В него же загрузите такой же артефакт, но с version: 8_102.
 3. Проверьте, что все файлы загрузились успешно.
 4. В ответе пришлите файл `maven-metadata.xml` для этого артефекта.
+
+**Ответ**  
+[maven-metadata.xml](https://github.com/bag2000/devops-netology/blob/main/09-ci/03/solution/maven-metadata.xml)  
 
 ### Знакомство с Maven
 
@@ -57,6 +64,9 @@
 2. Запустите команду `mvn package` в директории с `pom.xml`, ожидайте успешного окончания.
 3. Проверьте директорию `~/.m2/repository/`, найдите ваш артефакт.
 4. В ответе пришлите исправленный файл `pom.xml`.
+
+**Ответ**  
+[pom.xml](https://github.com/bag2000/devops-netology/blob/main/09-ci/03/solution/pom_repaired.xml)  
 
 ---
 
