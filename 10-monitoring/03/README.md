@@ -65,24 +65,7 @@ node_filesystem_free_bytes{mountpoint="/"}
 
 1. Создайте для каждой Dashboard подходящее правило alert — можно обратиться к первой лекции в блоке «Мониторинг».
 1. В качестве решения задания приведите скриншот вашей итоговой Dashboard.  
-```
-Не добавляется поинт Телеграм.
-Создал бота Телеграм
-Получил токен Телеграм
-Иду в Grafana - Alerting - Contact points
-Жму Add contact point
-Ввожу имя, integration - Telegram
-BOT API Token добавляю токен
-Создал в телеграм группу (и канал пробовал). Добавил туда созданного бота.
-Получил id группы (канала) Добавлял его в Chat ID
-Тестовое сообщение не работает. Говорит нужно настроить Optional Telegram settings. Настраиваю.
-Добавляю тот же id (группы, канала) в Message Thread ID. И...
-Failed to send test alert.: failed to validate integration "test" (UID) of type "telegram": message thread id must be an int32
-
-Что бы я не делал, какой id ни вбивал, целое число, не целое, ссылку, не работает.
-
-Соответственно, задание с настройкой алертов сделать не могу. Как настроить Grafana на отправку сообщений в телеграм?
-```
+![scren3](https://github.com/bag2000/devops-netology/blob/main/10-monitoring/03/screenshots/3.png)  
   
 ## Задание 4
 
