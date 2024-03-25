@@ -1,5 +1,3 @@
-
-
 {
   "annotations": {
     "list": [
@@ -22,6 +20,7 @@
   "graphTooltip": 0,
   "id": 2,
   "links": [],
+  "liveNow": false,
   "panels": [
     {
       "datasource": {
@@ -45,14 +44,16 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
                 "value": 80
               }
             ]
-          }
+          },
+          "unitScale": true
         },
         "overrides": [
           {
@@ -85,7 +86,8 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green"
+                      "color": "green",
+                      "value": null
                     },
                     {
                       "color": "#EAB839",
@@ -100,7 +102,7 @@
               },
               {
                 "id": "custom.width",
-                "value": 60
+                "value": 70
               },
               {
                 "id": "decimals",
@@ -142,7 +144,8 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green"
+                      "color": "green",
+                      "value": null
                     },
                     {
                       "color": "#EAB839",
@@ -283,7 +286,8 @@
                   "mode": "percentage",
                   "steps": [
                     {
-                      "color": "green"
+                      "color": "green",
+                      "value": null
                     },
                     {
                       "color": "red",
@@ -314,7 +318,7 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 11,
+        "w": 10,
         "x": 0,
         "y": 0
       },
@@ -337,7 +341,7 @@
           }
         ]
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "10.3.5",
       "targets": [
         {
           "datasource": {
@@ -514,6 +518,102 @@
         }
       ],
       "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "edgbyzu4yups0f"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 5
+      },
+      "id": 4,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "edgbyzu4yups0f"
+          },
+          "editorMode": "code",
+          "expr": "(1 - avg(irate(node_cpu_seconds_total{mode=\"idle\", instance=\"$node\",job=\"$job\"}[1m])) by (instance)) * 100",
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "CPU",
+      "type": "timeseries"
     }
   ],
   "refresh": "5s",
@@ -538,17 +638,74 @@
         "regex": "",
         "skipUrlSync": false,
         "type": "datasource"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "node",
+          "value": "node"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${datasource}"
+        },
+        "definition": "label_values(node_uname_info,job)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Job",
+        "multi": false,
+        "name": "job",
+        "options": [],
+        "query": {
+          "qryType": 1,
+          "query": "label_values(node_uname_info,job)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "192.168.12.140:9100",
+          "value": "192.168.12.140:9100"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${datasource}"
+        },
+        "definition": "label_values(node_uname_info{job=\"$job\"},instance)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Host",
+        "multi": false,
+        "name": "node",
+        "options": [],
+        "query": {
+          "qryType": 1,
+          "query": "label_values(node_uname_info{job=\"$job\"},instance)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
       }
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-5m",
     "to": "now"
   },
+  "timeRangeUpdatedDuringEditOrView": false,
   "timepicker": {},
   "timezone": "browser",
   "title": "New dashboard",
   "uid": "edgc9c0hnh8g0e",
-  "version": 24,
+  "version": 30,
   "weekStart": ""
 }
