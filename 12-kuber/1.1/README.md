@@ -82,6 +82,9 @@
 2. Файл README.md должен содержать скриншоты вывода команд `kubectl get nodes` и скриншот дашборда.
   
 <a name="ans"></a>**Ответ**  
+![1](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.1/images/1.png)  
+![2](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.1/images/2.png)  
+![3](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.1/images/3.png)  
 
 ------
 
