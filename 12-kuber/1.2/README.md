@@ -30,7 +30,7 @@
 3. Подключиться локально к Pod с помощью `kubectl port-forward` и вывести значение (curl или в браузере).
 
 **Ответ**  
-[Манифест-POD]()  
+[Манифест-POD](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.2/files/pod-hellow-world.yaml)  
   
 Вывод в браузере:  
 ```
@@ -84,8 +84,8 @@ hello-world   1/1     Running   0          2m20s
 4. Подключиться локально к Service с помощью `kubectl port-forward` и вывести значение (curl или в браузере).
   
 **Ответ**  
-[Манифест-POD]()  
-[Манифест-Service]()  
+[Манифест-POD](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.2/files/pod-netology-web.yaml)  
+[Манифест-Service](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.2/files/service-netology-web.yaml)  
   
 Вывод в браузере:  
 
