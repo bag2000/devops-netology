@@ -100,7 +100,27 @@ WBITT Network MultiTool (with NGINX) - nginx-multitool-dep-54997bb668-hxxxd - 10
 2. Убедиться, что nginx не стартует. В качестве Init-контейнера взять busybox.
 3. Создать и запустить Service. Убедиться, что Init запустился.
 4. Продемонстрировать состояние пода до и после запуска сервиса.
-
+  
+**Ответ***  
+[Манифест-Deployment](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.3/files/deploy-netology-2.yaml) 
+[Манифест-Service](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.3/files/service-netology-1.yaml)  
+  
+До создания Service:  
+```
+adm2@srv1:~/kuber/1.3$ kubectl -n netology get po -w
+NAME                         READY   STATUS     RESTARTS   AGE
+nginx-dep-76f9458d76-r6tvx   0/1     Init:0/1   0          6s
+```
+  
+После создания Service:  
+```
+adm2@srv1:~/kuber/1.3$ kubectl -n netology get po -w
+NAME                         READY   STATUS     RESTARTS   AGE
+nginx-dep-76f9458d76-r6tvx   0/1     Init:0/1   0          6s
+nginx-dep-76f9458d76-r6tvx   0/1     PodInitializing   0          2m57s
+nginx-dep-76f9458d76-r6tvx   1/1     Running           0          2m59s
+```
+  
 ------
 
 ### Правила приема работы
