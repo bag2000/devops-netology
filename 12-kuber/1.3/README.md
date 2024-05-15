@@ -53,9 +53,13 @@ nginx-multitool-dep-54997bb668-hxxxd   2/2     Running   0          23m
 ```
   
 Проверяем доступ до приложений из п.1:  
+1. Заходим в multitool-pod  
 ```
 kubectl -n netology exec -i -t multitool-pod -- /bin/bash
-
+```
+  
+2. Проверяем nxinx  
+```
 multitool-pod:/# curl 192.168.12.246:80
 <!DOCTYPE html>
 <html>
@@ -80,11 +84,14 @@ Commercial support is available at
 <p><em>Thank you for using nginx.</em></p>
 </body>
 </html>
-
+```
+  
+3. Проверяем multitool 
+```
 multitool-pod:/# curl 192.168.12.246:8080
 WBITT Network MultiTool (with NGINX) - nginx-multitool-dep-54997bb668-hxxxd - 10.1.150.5 - HTTP: 8080 , HTTPS: 443 . (Formerly praqma/network-multitool)
 ```
-
+  
 ------
 
 ### Задание 2. Создать Deployment и обеспечить старт основного контейнера при выполнении условий
