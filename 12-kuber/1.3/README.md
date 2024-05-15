@@ -102,8 +102,8 @@ WBITT Network MultiTool (with NGINX) - nginx-multitool-dep-54997bb668-hxxxd - 10
 4. Продемонстрировать состояние пода до и после запуска сервиса.
   
 **Ответ***  
-[Манифест-Deployment](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.3/files/deploy-netology-2.yaml) 
-[Манифест-Service](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.3/files/service-netology-1.yaml)  
+[Манифест-Deployment](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.3/files/deploy-netology-2.yaml)  
+[Манифест-Service](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.3/files/service-netology-2.yaml)  
   
 До создания Service:  
 ```
