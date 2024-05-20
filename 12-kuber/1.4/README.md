@@ -34,7 +34,7 @@
 [Манифест-Deployment](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.4/files/deploy-netology-1.yaml)  
 [Манифест-Service](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.4/files/service-netology-1.yaml)  
   
-1. Создаем отдельный Pod с приложением multitool  
+1. Создаем отдельный Pod с приложением curl  
 ```
 adm2@srv1:~/kuber/1.4$ kubectl -n netology run mycurlpod --image=curlimages/curl -i --tty --rm -- sh
 If you don't see a command prompt, try pressing enter.
