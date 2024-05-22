@@ -33,10 +33,10 @@
   
 **Ответ**  
   
-[Манифест Deployment Frontend](https://kubernetes.io/docs/concepts/services-networking/service/)  
-[Манифест Deployment Backend](https://kubernetes.io/docs/concepts/services-networking/service/)  
-[Манифест Service Frontend](https://kubernetes.io/docs/concepts/services-networking/service/)  
-[Манифест Service Backend](https://kubernetes.io/docs/concepts/services-networking/service/)  
+[Манифест Deployment Frontend](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.5/files/deploy-frontend-netology.yaml)  
+[Манифест Deployment Backend](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.5/files/deploy-backend-netology.yaml)  
+[Манифест Service Frontend](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.5/files/service-frontend-netology.yaml)  
+[Манифест Service Backend](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.5/files/service-backend-netology.yaml)  
   
 1. Создаем отдельный Pod с приложением curl  
 ```
@@ -89,7 +89,7 @@ WBITT Network MultiTool (with NGINX) - backend-dep-577878f84-h2cv8 - 10.1.150.17
   
 **Ответ**  
   
-[Манифест Ingress](https://kubernetes.io/docs/concepts/services-networking/service/)  
+[Манифест Ingress](https://github.com/bag2000/devops-netology/blob/main/12-kuber/1.5/files/ingress-netology.yaml)  
   
 1. Узнаем ip ноды  
 ```
@@ -98,7 +98,7 @@ NAME            STATUS   ROLES    AGE   VERSION   INTERNAL-IP      EXTERNAL-IP  
 ntlg-microk8s   Ready    <none>   15d   v1.29.4   192.168.12.246   <none>        Ubuntu 22.04.4 LTS   5.15.0-107-generic   containerd://1.6.28
 ```
   
-2. Для учебного тестирования, прописываем домен example.com к полученному выше ip (192.168.12.246)  
+2. Для учебного тестирования прописываем домен example.com к полученному выше ip (192.168.12.246)  
 ```
 adm2@srv1:~/kuber/1.5$ cat /etc/hosts
 127.0.0.1 localhost
