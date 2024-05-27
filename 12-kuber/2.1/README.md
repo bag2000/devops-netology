@@ -38,6 +38,7 @@
   
 **Ответ**  
   
+[Манифест Deployment](https://github.com/bag2000/devops-netology/blob/main/12-kuber/2.1/files/deploy-busy-multi-netology.yaml)  
 1. Заходим в Pod multitool  
 ```
 adm2@srv1:~/kuber/2.1$ kubectl exec -it deploy/busy-multi-dep -c multitool -- sh
@@ -69,6 +70,7 @@ waiting for 5 sec
   
 **Ответ**  
   
+[Манифест DaemonSet](https://github.com/bag2000/devops-netology/blob/main/12-kuber/2.1/files/daemonset-multitool-netology.yaml)  
 1. Заходим в Pod multitool  
 ```
 adm2@srv1:~/kuber/2.1$ kubectl exec -it daemonset/multi-dae -c multitool -- sh
