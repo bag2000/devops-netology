@@ -123,7 +123,7 @@ helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs
     --set nfs.path=/var/nfs
 ```  
   
-2 NFS до записи  
+2. NFS до записи  
 ```
 adm2@srv1:/var/nfs$ ls
 adm2@srv1:/var/nfs$
