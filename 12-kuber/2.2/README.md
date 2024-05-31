@@ -110,6 +110,7 @@ Deploy обращается к PV через PVC. PVC в свою очередь
 adm2@srv1:~/kuber/2.2$ kubectl get po
 NAME                                              READY   STATUS    RESTARTS   AGE
 nfs-subdir-external-provisioner-69c574889-w5jrx   1/1     Running   0          17h
+
 adm2@srv1:~/kuber/2.2$ kubectl get sc
 NAME         PROVISIONER                                     RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
 nfs-client   cluster.local/nfs-subdir-external-provisioner   Delete          Immediate           true                   17h
