@@ -105,7 +105,7 @@ Deploy обращается к PV через PVC. PVC в свою очередь
 [Манифест Deployment](https://github.com/bag2000/devops-netology/blob/main/12-kuber/2.2/files/deploy-multi-netology.yaml)  
 [Манифест PVC](https://github.com/bag2000/devops-netology/blob/main/12-kuber/2.2/files/pvc-nfs.yaml) 
   
-1.1. Для решения данной задачи, развернул на отдельной виртуальной машине nfs сервер. Установил этот [nfs provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner).  
+1. Для решения данной задачи, развернул на отдельной виртуальной машине nfs сервер. Установил этот [nfs provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner).  
 ```
 adm2@srv1:~/kuber/2.2$ kubectl get po
 NAME                                              READY   STATUS    RESTARTS   AGE
@@ -115,7 +115,7 @@ NAME         PROVISIONER                                     RECLAIMPOLICY   VOL
 nfs-client   cluster.local/nfs-subdir-external-provisioner   Delete          Immediate           true                   17h
 ```
   
-1.2. Конфигурация провизора при установке  
+2. Конфигурация провизора при установке  
 ```
 helm repo add nfs-subdir-external-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
 helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner \
@@ -123,13 +123,13 @@ helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs
     --set nfs.path=/var/nfs
 ```  
   
-2. NFS до записи  
+3. NFS до записи  
 ```
 adm2@srv1:/var/nfs$ ls
 adm2@srv1:/var/nfs$
 ```
   
-3. Создаем Deployment и pvc  
+4. Создаем Deployment и pvc  
   
 ```
 adm2@srv1:~/kuber/2.2$ kubectl apply -f pvc-nfs.yaml 
@@ -152,7 +152,7 @@ NAME                                       CAPACITY   ACCESS MODES   RECLAIM POL
 pvc-b9f0fa01-88c4-4b2c-b7f7-f460cbad4953   1Mi        RWX            Delete           Bound    default/nfs-claim   nfs-client     <unset>
 ```
   
-4. Заходим в multitool, создаем файл  
+5. Заходим в multitool, создаем файл  
 ```
 adm2@srv1:~/kuber/2.2$ kubectl exec -it deploy/multi-dep -- sh
 / # 
@@ -165,7 +165,7 @@ hi from me
 / #
 ```
   
-5. Проверяем наличие файла на nfs сервере  
+6. Проверяем наличие файла на nfs сервере  
 ```
 adm2@srv1:/var/nfs$ ls
 default-nfs-claim-pvc-b9f0fa01-88c4-4b2c-b7f7-f460cbad4953
