@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busy-multi-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busy-multi
+  template:
+    metadata:
+      labels:
+        app: busy-multi
+    spec:
+      containers:
+        - name: busybox
+          image: busybox
+          args:
+            - "/bin/sh"
+            - "-c"
+            - "while true; do echo waiting for 5 sec >> /logs/log.txt; sleep 5; done;"
+          volumeMounts:
+            - name: data
+              mountPath: /logs
+        - name: multitool
+          image: wbitt/network-multitool
+          volumeMounts:
+            - name: data
+              mountPath: /logs
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: task-pv-claim
