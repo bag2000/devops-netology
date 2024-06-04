@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx 
+          image: nginx 
+          volumeMounts:
+            - mountPath: /etc/nginx/conf.d/default.conf
+              subPath: default.conf
+              name: nginx-conf
+            - mountPath: /usr/share/nginx/html/index.html
+              subPath: index.html
+              name: nginx-conf
+          ports:
+          - containerPort: 9090
+            protocol: TCP
+      volumes:
+        - name: nginx-conf
+          configMap:
+            name: nginx
