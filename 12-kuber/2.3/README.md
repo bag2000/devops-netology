@@ -34,9 +34,9 @@
   
 **Ответ**  
   
-[Манифест Deployment]()  
-[Манифест ConfigMap]()  
-[Манифест Service]()  
+[Манифест Deployment](https://github.com/bag2000/devops-netology/blob/main/12-kuber/2.3/files/deploy-netology-1.yaml)  
+[Манифест ConfigMap](https://github.com/bag2000/devops-netology/blob/main/12-kuber/2.3/files/configmap-netology-1.yaml)  
+[Манифест Service](https://github.com/bag2000/devops-netology/blob/main/12-kuber/2.3/files/service-netology-1.yaml)  
   
 1. Заходим в multitool
 ```
@@ -84,10 +84,10 @@ Commercial support is available at
   
 **Ответ**  
   
-[Манифест Deployment]()  
-[Манифест ConfigMap]()  
-[Манифест Service]()  
-[Манифест Ingress]()  
+[Манифест Deployment](https://github.com/bag2000/devops-netology/blob/main/12-kuber/2.3/files/deploy-netology-2.yaml)  
+[Манифест ConfigMap](https://github.com/bag2000/devops-netology/blob/main/12-kuber/2.3/files/configmap-netology-1.yaml)  
+[Манифест Service](https://github.com/bag2000/devops-netology/blob/main/12-kuber/2.3/files/service-netology-2.yaml)  
+[Манифест Ingress](https://github.com/bag2000/devops-netology/blob/main/12-kuber/2.3/files/ingress-netology-2.yaml)  
 1. Генерируем сертификат  
 ```
 adm2@srv1:~/kuber/2.3$ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout server-key.pem -out server.pem -subj "/CN=example.com/O=example.com"
