@@ -1,16 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-multitool-svc
+  name: nginx-svc
 spec:
   selector:
-    app: nginx-multitool
+    app: nginx
   ports:
     - name: nginx
       protocol: TCP
-      port: 9090
-      targetPort: 9090
-    - name: multitool
-      protocol: TCP
       port: 80
-      targetPort: 80
+      targetPort: 9090
