@@ -30,7 +30,7 @@
 3. В переменных чарта измените образ приложения для изменения версии.
   
 **Ответ**  
-[Чарт](https://github.com/bag2000/devops-netology/tree/main/12-kuber/2.5/files/nginx)  
+[Чарт](https://github.com/bag2000/devops-netology/tree/main/12-kuber/2.5/files/netology-app)  
   
 ------
 ### Задание 2. Запустить две версии в разных неймспейсах
@@ -49,75 +49,86 @@ adm2@srv1:~/kuber/2.5$ kubectl create ns app2
 namespace/app2 created
 ```  
   
-2. Запускаем версию по умолчанию в namespace app1 (1.16.0)  
+2. Запускаем версию по умолчанию в namespace app1 (front latest, backend latest, appVersion 1.0.0)  
 ```
-adm2@srv1:~/kuber/2.5$ helm upgrade --install --atomic nginx1 nginx/ --namespace app1
+adm2@srv1:~/kuber/2.5$ helm upgrade --install --atomic netology-app1 netology-app/ --namespace app1
 WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /home/adm2/kuber/example-cluster-kubeconfig.yaml
 WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /home/adm2/kuber/example-cluster-kubeconfig.yaml
-Release "nginx1" does not exist. Installing it now.
-NAME: nginx1
-LAST DEPLOYED: Mon Jun 10 15:45:04 2024
+Release "netology-app1" does not exist. Installing it now.
+NAME: netology-app1
+LAST DEPLOYED: Mon Jun 10 22:04:09 2024
 NAMESPACE: app1
 STATUS: deployed
 REVISION: 1
 TEST SUITE: None
 
-adm2@srv1:~/kuber/2.5$ kubectl -n app1 get deploy/nginx1 -o yaml | grep image:
-      - image: nginx:1.16.0
+adm2@srv1:~/kuber/2.5$ kubectl -n app1 get pod
+NAME                                  READY   STATUS    RESTARTS   AGE
+backend-1-0-0-dep-7697f6dfb5-xdgd5    1/1     Running   0          14s
+frontend-1-0-0-dep-74f74948c6-srkcj   1/1     Running   0          14s
+
+adm2@srv1:~/kuber/2.5$ kubectl -n app1 get pod/backend-1-0-0-dep-7697f6dfb5-xdgd5 -o yaml | grep image:
+  - image: wbitt/network-multitool:latest
+    image: docker.io/wbitt/network-multitool:latest
+	
+adm2@srv1:~/kuber/2.5$ kubectl -n app1 get pod/frontend-1-0-0-dep-74f74948c6-srkcj -o yaml | grep image:
+  - image: nginx:latest
+    image: docker.io/library/nginx:latest
 
 adm2@srv1:~/kuber/2.5$ helm -n app1 list
 WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /home/adm2/kuber/example-cluster-kubeconfig.yaml
 WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /home/adm2/kuber/example-cluster-kubeconfig.yaml
-NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
-nginx1  app1            1               2024-06-10 15:45:04.545733458 +0300 MSK deployed        nginx-0.1.0     1.16.0
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
+netology-app1   app1            1               2024-06-10 22:04:09.162406767 +0300 MSK deployed        netology-app-0.1.0      1.0.0
 ```  
   
-3. Запускаем версию 2 в namespace app1 (1.22.0)  
+3. Запускаем версию 2 в namespace app1 (front 1.22.0, backend latest, appVersion 1.0.1)  
 ```
-adm2@srv1:~/kuber/2.5$ helm upgrade --install --atomic nginx2 nginx/ --namespace app1 --set image.tag=1.22.0
+adm2@srv1:~/kuber/2.5$ helm upgrade --install --atomic netology-app2 netology-app/ --namespace app1 --set fronted.image.tag=1.22.0 --set appVersion=1.0.1
 WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /home/adm2/kuber/example-cluster-kubeconfig.yaml
 WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /home/adm2/kuber/example-cluster-kubeconfig.yaml
-Release "nginx2" does not exist. Installing it now.
-NAME: nginx2
-LAST DEPLOYED: Mon Jun 10 16:14:13 2024
+Release "netology-app2" does not exist. Installing it now.
+NAME: netology-app2
+LAST DEPLOYED: Mon Jun 10 22:15:18 2024
 NAMESPACE: app1
 STATUS: deployed
 REVISION: 1
-TEST SUITE: Non
+TEST SUITE: None
 
-adm2@srv1:~/kuber/2.5$ kubectl -n app1 get deploy/nginx2 -o yaml | grep image:
-      - image: nginx:1.22.0
+adm2@srv1:~/kuber/2.5$ kubectl -n app1 get pod
+NAME                                  READY   STATUS    RESTARTS   AGE
+backend-1-0-0-dep-7697f6dfb5-xdgd5    1/1     Running   0          4m45s
+backend-1-0-1-dep-7885fd676f-5zppk    1/1     Running   0          9s
+frontend-1-0-0-dep-74f74948c6-srkcj   1/1     Running   0          4m45s
+frontend-1-0-1-dep-8657959b4b-l964m   1/1     Running   0          9s
 
-adm2@srv1:~/kuber/2.5$ helm -n app1 list
-WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /home/adm2/kuber/example-cluster-kubeconfig.yaml
-WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /home/adm2/kuber/example-cluster-kubeconfig.yaml
-NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
-nginx1  app1            2               2024-06-10 16:09:59.916684417 +0300 MSK deployed        nginx-0.1.0     1.16.0     
-nginx2  app1            1               2024-06-10 16:14:13.195545293 +0300 MSK deployed        nginx-0.1.0     1.16.0
+adm2@srv1:~/kuber/2.5$ kubectl -n app1 get pod/frontend-1-0-1-dep-8657959b4b-l964m -o yaml | grep image:
+  - image: nginx:1.22.0
+    image: docker.io/library/nginx:1.22.0
 ```  
   
-4. Запускаем версию 3 в namespace app2 (1.23.0)  
+4. Запускаем версию 3 в namespace app2 (front latest, backend minimal, appVersion 1.0.2)  
 ```
-adm2@srv1:~/kuber/2.5$ helm upgrade --install --atomic nginx1 nginx/ --namespace app2 --set image.tag=1.23.0
+adm2@srv1:~/kuber/2.5$ helm upgrade --install --atomic netology-app1 netology-app/ --namespace app2 --set backend.image.tag=minimal --set appVersion=1.0.2
 WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /home/adm2/kuber/example-cluster-kubeconfig.yaml
 WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /home/adm2/kuber/example-cluster-kubeconfig.yaml
-Release "nginx1" does not exist. Installing it now.
-NAME: nginx1
-LAST DEPLOYED: Mon Jun 10 16:16:41 2024
+Release "netology-app1" does not exist. Installing it now.
+NAME: netology-app1
+LAST DEPLOYED: Mon Jun 10 22:20:03 2024
 NAMESPACE: app2
 STATUS: deployed
 REVISION: 1
 TEST SUITE: None
 
-adm2@srv1:~/kuber/2.5$ kubectl -n app2 get deploy/nginx1 -o yaml | grep image:
-      - image: nginx:1.23.0
+adm2@srv1:~/kuber/2.5$ kubectl -n app2 get pod
+NAME                                  READY   STATUS    RESTARTS   AGE
+backend-1-0-2-dep-64fbb698b9-zzfs5    1/1     Running   0          71s
+frontend-1-0-2-dep-59c65b7668-hpzpq   1/1     Running   0          71s
 
-adm2@srv1:~/kuber/2.5$ helm -n app2 list
-WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /home/adm2/kuber/example-cluster-kubeconfig.yaml
-WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /home/adm2/kuber/example-cluster-kubeconfig.yaml
-NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
-nginx1  app2            1               2024-06-10 16:16:41.910690511 +0300 MSK deployed        nginx-0.1.0     1.16.0
-```
+adm2@srv1:~/kuber/2.5$ kubectl -n app2 get pod/backend-1-0-2-dep-64fbb698b9-zzfs5 -o yaml | grep image:
+  - image: wbitt/network-multitool:minimal
+    image: docker.io/wbitt/network-multitool:minimal
+```  
   
 ### Правила приёма работы
 

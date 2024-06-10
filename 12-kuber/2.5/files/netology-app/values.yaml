@@ -1,0 +1,13 @@
+replicaCount: 1
+
+fronted:
+  image:
+    repository: nginx
+    tag: "latest"
+
+backend:
+  image:
+    repository: wbitt/network-multitool
+    tag: "latest"
+
+appVersion: "1.0.0"

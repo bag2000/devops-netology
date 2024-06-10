@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-{{ .Values.appVersion | replace "." "-" }}-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend-{{ .Values.appVersion | replace "." "-" }}
+  template:
+    metadata:
+      labels:
+        app: backend-{{ .Values.appVersion | replace "." "-" }}
+    spec:
+      containers:
+        - name: backend-{{ .Values.appVersion | replace "." "-" }}
+          image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}"
