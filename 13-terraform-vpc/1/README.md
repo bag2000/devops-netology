@@ -23,8 +23,10 @@
  - Создать в этой приватной подсети виртуалку с внутренним IP, подключиться к ней через виртуалку, созданную ранее, и убедиться, что есть доступ к интернету.
   
 **Ответ**  
-[Файлы Terraform](https://github.com/bag2000/devops-netology/tree/main/13-terraform-vpc/1/files)
-  
+Для запуска нужно указать переменные:  
+token, cloud_id, folder_id, vms_ssh_root_key  
+[Файлы Terraform](https://github.com/bag2000/devops-netology/tree/main/13-terraform-vpc/1/files)  
+    
 Resource Terraform для Yandex Cloud:
 
 - [VPC subnet](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/vpc_subnet).
