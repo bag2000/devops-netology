@@ -23,7 +23,7 @@
  - Создать в этой приватной подсети виртуалку с внутренним IP, подключиться к ней через виртуалку, созданную ранее, и убедиться, что есть доступ к интернету.
   
 **Ответ**
-
+[Файлы Terraform](https://github.com/bag2000/devops-netology/tree/main/13-terraform-vpc/1/files)
   
 Resource Terraform для Yandex Cloud:
 
@@ -32,6 +32,9 @@ Resource Terraform для Yandex Cloud:
 - [Compute Instance](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/compute_instance).
 
 ---
+  
+  
+**НЕ ВЫПОЛНЯЛОСЬ**
 ### Задание 2. AWS* (задание со звёздочкой)
 
 Это необязательное задание. Его выполнение не влияет на получение зачёта по домашней работе.
