@@ -32,13 +32,13 @@ resource "yandex_compute_instance" "public-vm" {
       host        = yandex_compute_instance.public-vm.network_interface[0].nat_ip_address
       type        = "ssh"
       user        = "ubuntu"
-      private_key = "${file("/home/adm2/.ssh/id_ed25519")}"
+      private_key = "${file(var.vms_ssh_root_key_path)}"
       agent       = false
       timeout     = "300s"
   }
 
   provisioner "file" {
-    source      = "~/.ssh/id_ed25519"
+    source      = var.vms_ssh_root_key_path
     destination = "/home/ubuntu/.ssh/id_ed25519"
   }
 

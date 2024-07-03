@@ -43,6 +43,11 @@ variable "vms_ssh_root_key" {
   description = "ssh-keygen -t ed25519"
 }
 
+variable "vms_ssh_root_key_path" {
+  type        = string
+  description = "ssh-keygen -t ed25519"
+}
+
 variable "vms_resources" {
     type = map(map(string))
     default = {
