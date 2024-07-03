@@ -25,8 +25,9 @@
  - Создать в этой приватной подсети виртуалку с внутренним IP, подключиться к ней через виртуалку, созданную ранее, и убедиться, что есть доступ к интернету.
   
 **Ответ**  
-Для запуска нужно указать переменные:  
-token, cloud_id, folder_id, vms_ssh_root_key  
+1. Для запуска нужно указать переменные:  token, cloud_id, folder_id, vms_ssh_root_key  
+2. Логинимся под учеткой ubuntu  
+3. Output: белый ip публичной VM, серый ip приватной VM  
 [Файлы Terraform](https://github.com/bag2000/devops-netology/tree/main/13-terraform-vpc/1/files)  
     
 Resource Terraform для Yandex Cloud:
