@@ -34,8 +34,8 @@
 4. (дополнительно)* Создать Application Load Balancer с использованием Instance group и проверкой состояния.
   
 **Ответ (без 4 задания)**  
-[Bucket](https://github.com/bag2000/devops-netology/tree/main/13-terraform-vpc/2/files/2-bucket)
-[VMS](https://github.com/bag2000/devops-netology/tree/main/13-terraform-vpc/2/files/2-vms)
+[Bucket](https://github.com/bag2000/devops-netology/tree/main/13-terraform-vpc/2/files/2-bucket)  
+[VMS](https://github.com/bag2000/devops-netology/tree/main/13-terraform-vpc/2/files/2-vms)  
   
 
 Полезные документы:
