@@ -1,3 +1,5 @@
+# FOPS-10 Поляков Роман
+
 # Домашнее задание к занятию «Вычислительные мощности. Балансировщики нагрузки»  
 
 ### Подготовка к выполнению задания
@@ -30,6 +32,11 @@
  - Создать сетевой балансировщик.
  - Проверить работоспособность, удалив одну или несколько ВМ.
 4. (дополнительно)* Создать Application Load Balancer с использованием Instance group и проверкой состояния.
+  
+**Ответ (без 4 задания)**  
+[Bucket](https://github.com/bag2000/devops-netology/tree/main/13-terraform-vpc/2/files/2-bucket)
+[VMS](https://github.com/bag2000/devops-netology/tree/main/13-terraform-vpc/2/files/2-vms)
+  
 
 Полезные документы:
 
@@ -37,7 +44,9 @@
 - [Network Load Balancer](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/lb_network_load_balancer).
 - [Группа ВМ с сетевым балансировщиком](https://cloud.yandex.ru/docs/compute/operations/instance-groups/create-with-balancer).
 
----
+---  
+## НЕ ВЫПОЛНЯЛОСЬ  
+
 ## Задание 2*. AWS (задание со звёздочкой)
 
 Это необязательное задание. Его выполнение не влияет на получение зачёта по домашней работе.
