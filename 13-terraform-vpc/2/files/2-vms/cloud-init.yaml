@@ -1,0 +1,3 @@
+#cloud-config
+runcmd:
+ - 'echo "<a href="https://my-netology-pictures.storage.yandexcloud.net/smile.jpg">IMAGE</a>" > /var/www/html/index.html'
