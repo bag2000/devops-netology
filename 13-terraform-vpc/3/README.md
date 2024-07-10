@@ -19,13 +19,13 @@
  - в качестве результата предоставить скриншот на страницу с сертификатом в заголовке (замочек).
   
 **Ответ**  
-[Bucket]()  
+[Bucket](https://github.com/bag2000/devops-netology/tree/main/13-terraform-vpc/3/files)  
 Ключ  
-![ключ]()  
+![ключ](https://github.com/bag2000/devops-netology/blob/main/13-terraform-vpc/3/files/screenshots/ключ.png)  
 Шифрование  
-![шифрование]()  
+![шифрование](https://github.com/bag2000/devops-netology/blob/main/13-terraform-vpc/3/files/screenshots/шифрование.png)  
 Доступ  
-![доступ]()  
+![доступ](https://github.com/bag2000/devops-netology/blob/main/13-terraform-vpc/3/files/screenshots/доступ_к_файлу.png)  
   
 Полезные документы:
 
