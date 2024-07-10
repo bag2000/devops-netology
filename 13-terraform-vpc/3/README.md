@@ -18,7 +18,7 @@
  - создать статическую страницу в Object Storage и применить сертификат HTTPS;
  - в качестве результата предоставить скриншот на страницу с сертификатом в заголовке (замочек).
   
-**Ответ**  
+**Ответ (без второго)**  
 [Bucket](https://github.com/bag2000/devops-netology/tree/main/13-terraform-vpc/3/files)  
 Ключ  
 ![ключ](https://github.com/bag2000/devops-netology/blob/main/13-terraform-vpc/3/files/screenshots/ключ.png)  
@@ -34,6 +34,8 @@
 - [KMS key](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/kms_symmetric_key).
 
 --- 
+## НЕ ВЫПОЛНЯЛОСЬ
+
 ## Задание 2*. AWS (задание со звёздочкой)
 
 Это необязательное задание. Его выполнение не влияет на получение зачёта по домашней работе.
